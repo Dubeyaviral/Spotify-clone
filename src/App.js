@@ -10,8 +10,8 @@ import { useDataLayerValue } from "./neccessary/DataLayer";
 const spotify = new SpotifyWebApi();
 function App() {
   const [{ token, discover_weekly, playlists }, dispatch] = useDataLayerValue();
-
   useEffect(()=>{
+    // console.log(process.env.REACT_APP_CLIENTID);
     const hash = getTokenFromUrl();
     const _token = hash.access_token;
     if(_token){
